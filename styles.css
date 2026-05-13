@@ -1,0 +1,46 @@
+05.13 6:22 PM
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+.dark {
+    --glass-bg: rgba(30, 30, 30, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav-item {
+    @apply transition-all p-3 rounded-full text-slate-400;
+}
+
+.nav-item.active {
+    @apply bg-indigo-600 text-white shadow-lg shadow-indigo-200 dark:shadow-none;
+}
+
+/* Slide Animations */
+.slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 0px; }
+
+/* Swipe Logic Helper */
+#app-slider {
+    will-change: transform;
+    cursor: grab;
+}
+#app-slider:active { cursor: grabbing; }
+
