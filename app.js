@@ -1,4 +1,3 @@
-05.13 6:31 PM
 // State Management
 let state = {
     tasks: JSON.parse(localStorage.getItem('tasks')) || [],
@@ -149,4 +148,3 @@ function updateDate() {
     const options = { weekday: 'long', month: 'short', day: 'numeric' };
     document.getElementById('current-date').innerText = new Date().toLocaleDateString(undefined, options);
 }
-
